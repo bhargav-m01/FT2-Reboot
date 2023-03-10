@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% block content %}
+{{ super() }}
+
+<div class="jumbotron">
+    <div class="card-deck">
+        <a href="{{url_for('mainbp.customer')}}">
+            <div class="card text-white bg-primary mb-5" style="max-width: 28rem;">            
+                <div class="card-body">
+                <h5 class="card-title">Customer</h5>
+                <p class="card-text">Click for submiting the complaint.</p>
+                </div>
+            </div>
+        </a>
+        <a href="{{url_for('mainbp.analyst')}}">
+            <div class="card text-white bg-primary mb-5" style="max-width: 28rem;">            
+                <div class="card-body">
+                <h5 class="card-title">Support Analyst</h5>
+                <p class="card-text">Click to analyse the customer complaints.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock content %}
+
