@@ -1,18 +1,22 @@
 {% extends "base.html" %} 
 {% block content %}
 {{ super() }}
+<div class="jumbotron">
 <h1> Submit a complaint </h1>
 <form action="/action_page.php">
     <label for="complaintbox">How can we help you?</label><br>
     <input type="text" id="taskInput" name="complaintbox" placeholder="Type in your complaint"><br>
     <br>
-    <button type="button" onclick="addTask()">Submit</button>
+    <button type="button" class="btn btn-primary" onclick="addTask()">Submit</button>
   </form> 
 <br>
 
 OR
 <br>
 <br>
+<!-- <div class="file-upload-wrapper">
+  <input type="file" id="input-file-now" class="file-upload" />
+</div> -->
   <head>
     <title>Drag and Drop Upload</title>
     <style>
@@ -60,7 +64,7 @@ OR
           // Do something with the file, like upload it to the server
         }
       }
-    </script>
+    </script> 
 <br>
 
 <body>
@@ -85,5 +89,6 @@ function addTask() {
 }
 
     </script>
+</div>
   
 {% endblock content %}
