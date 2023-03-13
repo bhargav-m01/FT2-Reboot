@@ -4,11 +4,12 @@
 <h1> Submit a complaint </h1>
 <form action="/action_page.php">
     <label for="complaintbox">How can we help you?</label><br>
-    <input type="text" id="complaint" name="complaintbox" placeholder="Type in your complaint"><br>
+    <input type="text" id="taskInput" name="complaintbox" placeholder="Type in your complaint"><br>
     <br>
-    <input type="submit" value="Submit">
+    <button type="button" onclick="addTask()">Submit</button>
   </form> 
 <br>
+
 OR
 <br>
 <br>
@@ -60,6 +61,29 @@ OR
         }
       }
     </script>
+<br>
+
+<body>
+    <h3>Chat History</h3>
+    <ul id="taskList"></ul>
   </body>
+
+  <script>
+let tasks = [];
+
+function addTask() {
+  const taskInput = document.getElementById("taskInput");
+  const taskList = document.getElementById("taskList");
+  const task = taskInput.value.trim();
+  if (task) {
+    tasks.push(task);
+    const taskItem = document.createElement("li");
+    taskItem.innerHTML = task;
+    taskList.appendChild(taskItem);
+    taskInput.value = "";
+  }
+}
+
+    </script>
   
 {% endblock content %}
