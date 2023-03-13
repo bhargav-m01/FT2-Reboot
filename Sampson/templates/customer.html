@@ -1,5 +1,65 @@
 {% extends "base.html" %} 
 {% block content %}
 {{ super() }}
-<h1> customer page</h1>
+<h1> Submit a complaint </h1>
+<form action="/action_page.php">
+    <label for="complaintbox">How can we help you?</label><br>
+    <input type="text" id="complaint" name="complaintbox" placeholder="Type in your complaint"><br>
+    <br>
+    <input type="submit" value="Submit">
+  </form> 
+<br>
+OR
+<br>
+<br>
+  <head>
+    <title>Drag and Drop Upload</title>
+    <style>
+      .drop-zone {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #ccc;
+      }
+
+      .drop-zone.hover {
+        border-color: #333;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="drop-zone" id="drop-zone">
+      Drag and drop files here or click to select files
+    </div>
+
+    <script>
+      const dropZone = document.getElementById('drop-zone');
+
+      dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        dropZone.classList.add('hover');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('hover');
+      });
+
+      dropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dropZone.classList.remove('hover');
+        const files = event.dataTransfer.files;
+        handleFiles(files);
+      });
+
+      function handleFiles(files) {
+        for (const file of files) {
+          console.log(file.name);
+          // Do something with the file, like upload it to the server
+        }
+      }
+    </script>
+  </body>
+  
 {% endblock content %}
