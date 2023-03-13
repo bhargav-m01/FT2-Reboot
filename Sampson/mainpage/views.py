@@ -17,3 +17,9 @@ def customer():
 def analyst():
 
     return render_template("analyst.html")
+
+
+@mainbp.route("/dataanalyst", methods=["GET","POST"])
+def dataanalyst():
+
+    return render_template("dataanalyst.html")
