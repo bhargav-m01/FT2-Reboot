@@ -35,6 +35,20 @@ function renderItems() {
 
 function openWindow(text) {
   const newWindow = window.open('', 'Checklist Item', 'height=200,width=400');
-  newWindow.document.write(`<h1>Complaint: ${text}</h1><br> <p>Response: We will get back to you with resolution</p>`);
+  newWindow.document.write(`<h1>Complaint: ${text}</h1><br> <p>Response: Dear valued customer,
+
+  We are sorry to hear that you had a negative experience with our bank. We take all customer complaints seriously and would like to apologize for any inconvenience that you may have experienced.
+  
+  We would like to assure you that we are committed to providing our customers with the best service possible, and we regret that we have fallen short of your expectations.
+  
+  We kindly request you to provide us with more details about the issue you encountered so that we can investigate the matter and take appropriate actions to ensure that similar incidents do not occur in the future.
+  
+  Please do not hesitate to contact us if you have any further questions or concerns. We value your business and appreciate your feedback.
+  
+  Thank you for bringing this matter to our attention.
+  
+  Sincerely,
+  
+  Customer Service Representative</p>`);
   newWindow.document.close();
 }
