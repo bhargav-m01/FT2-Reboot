@@ -3,12 +3,18 @@
 {{ super() }}
 <div class="jumbotron">
 <h1> Submit a complaint </h1>
-<form action="/customer">
+
+<form method="POST" action="/customer" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  {{ form.customercomplaint(size=20) }}
+  {{ form.submit}}
+</form>
+<!-- <form action="/customer">
     <label for="complaintbox">How can we help you?</label><br>
     <input type="text" id="taskInput" name="complaintbox" placeholder="Type in your complaint"><br>
     <br>
     <button type="submit" class="btn btn-primary" onclick="addTask()">Submit</button>
-  </form> 
+  </form>  -->
 <br>
 
 OR
@@ -75,7 +81,10 @@ OR
   <script>
 let tasks = [];
 
-function addTask() {
+
+function addTask(event) {
+
+  event.preventDefault();
   const taskInput = document.getElementById("taskInput");
   const taskList = document.getElementById("taskList");
   const task = taskInput.value.trim();
