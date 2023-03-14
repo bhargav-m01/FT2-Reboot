@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from Sampson.forms import customerform
 
 mainbp = Blueprint("mainbp", __name__)
 
@@ -11,7 +12,14 @@ def index():
 @mainbp.route("/customer", methods=["GET","POST"])
 def customer():
 
-    return render_template("customer.html")
+    form = customerform()
+
+    if form.validate_on_submit():
+
+        print(form.customercomplaint.data)
+
+
+    return render_template("customer.html", form=form)
 
 @mainbp.route("/analyst", methods=["GET","POST"])
 def analyst():

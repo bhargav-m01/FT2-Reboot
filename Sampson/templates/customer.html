@@ -2,6 +2,7 @@
 {% block content %}
 {{ super() }}
 
+<div class="jumbotron">
 <head>
   <meta charset="UTF-8">
   <title>Checklist App</title>
@@ -90,7 +91,10 @@ function openNewWindow() {
 
 let tasks = [];
 
-function addTask() {
+
+function addTask(event) {
+
+  event.preventDefault();
   const taskInput = document.getElementById("taskInput");
   const taskList = document.getElementById("taskList");
   const task = taskInput.value.trim();
@@ -110,6 +114,7 @@ function addTask() {
 
 
 <script src="/static/app.js"></script>
+</div>
 
 
 {% endblock content %}
