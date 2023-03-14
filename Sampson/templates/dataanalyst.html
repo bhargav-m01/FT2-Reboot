@@ -1,5 +1,113 @@
 {% extends "base.html" %} 
 {% block content %}
 {{ super() }}
-<h1> Data Analyst page</h1>
+<link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="/static/index.css">
+<head>
+	<title>Complaint Dashboard</title>
+    <script src="static/app.js"></script>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<h1>Complaint Dashboard</h1>
+
+	<h2>Complaint Status</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Received</td>
+				<td>100</td>
+			</tr>
+			<tr>
+				<td>Resolved</td>
+				<td>75</td>
+			</tr>
+			<tr>
+				<td>Pending</td>
+				<td>25</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Most Popular Categories</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Category</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Mortgages</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>Credit Card</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>Overdraft</td>
+				<td>20</td>
+			</tr>
+		</tbody>
+	</table>
+
+<head>
+	<title>Pie Chart Example</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include the Chart.js library -->
+</head>
+<body>
+	<h2>Customer Satisfaction</h2>
+    <div style="width: 50%">
+	<canvas id="myChart" style="max-width: 100%;"></canvas> <!-- Create a canvas element for the chart and set a max-width style -->
+</div>
+	<script>
+		var ctx = document.getElementById('myChart').getContext('2d');
+		
+		// Define the data values for each category
+		var data = {
+			labels: ['Mild', 'Severe'],
+			datasets: [{
+				label: 'Symptoms',
+				data: [60, 40],
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.5)',
+					'rgba(54, 162, 235, 0.5)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)'
+				],
+				borderWidth: 1
+			}]
+		};
+		
+		// Create the pie chart
+		var myPieChart = new Chart(ctx, {
+			type: 'pie',
+			data: data
+		});
+	</script>
+</body>
+
 {% endblock content %}
