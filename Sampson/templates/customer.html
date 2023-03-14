@@ -69,10 +69,15 @@ OR
 
 <body>
     <h3>Chat History</h3>
-    <ul id="taskList"></ul>
+    <ul id="taskList" href="google.com" onclick="openNewWindow"></ul>
   </body>
 
   <script>
+
+function openNewWindow() {
+    window.open("about:blank", "newWindow", "width=500,height=500");
+  }
+
 let tasks = [];
 
 function addTask() {
@@ -84,21 +89,12 @@ function addTask() {
     const taskItem = document.createElement("li");
     taskItem.innerHTML = task;
     taskList.appendChild(taskItem);
-    // taskIten.setAttribute("href", "https://google.com");
-    // taskItem.setAttribute("onclick", "openNewWindow()");
     taskInput.value = "";
   }
 }
 
     </script>
 </div>
-
-
-<script type="text/javascript">
-  function openNewWindow() {
-    window.open("about:blank", "newWindow", "width=500,height=500");
-  }
-</script>
 
 <body>
 	<h2>Checklist</h2>
@@ -109,8 +105,31 @@ function addTask() {
 		<li><a href="#" onclick="openNewWindow()">List Item 4</a></li>
 	</ul>
 </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist App</title>
+</head>
+<body>
+  <h1>Checklist App</h1>
+  <form>
+    <label for="item">Item:</label>
+    <input type="text" id="item">
+    <button type="button" onclick="addItem()">Add Item</button>
+  </form>
+  <ul id="checklist">
+  </ul>
+
+  <script src="app.js"></script>
+</body>
+
+
+
+<script src="/static/app.js"></script>
+
+
 </html>
 
-  
-{% endblock content %}
 
+
+{% endblock content %}
