@@ -84,11 +84,33 @@ function addTask() {
     const taskItem = document.createElement("li");
     taskItem.innerHTML = task;
     taskList.appendChild(taskItem);
+    // taskIten.setAttribute("href", "https://google.com");
+    // taskItem.setAttribute("onclick", "openNewWindow()");
     taskInput.value = "";
   }
 }
 
     </script>
 </div>
+
+
+<script type="text/javascript">
+  function openNewWindow() {
+    window.open("about:blank", "newWindow", "width=500,height=500");
+  }
+</script>
+
+<body>
+	<h2>Checklist</h2>
+	<ul>
+		<li><a href="#" onclick="openNewWindow()">List Item 1</a></li>
+		<li><a href="#" onclick="openNewWindow()">List Item 2</a></li>
+		<li><a href="#" onclick="openNewWindow()">List Item 3</a></li>
+		<li><a href="#" onclick="openNewWindow()">List Item 4</a></li>
+	</ul>
+</body>
+</html>
+
   
 {% endblock content %}
+
