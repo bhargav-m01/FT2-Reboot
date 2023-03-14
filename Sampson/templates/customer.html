@@ -1,6 +1,7 @@
 {% extends "base.html" %} 
 {% block content %}
 {{ super() }}
+<<<<<<< HEAD
 <div class="jumbotron">
 <h1> Submit a complaint </h1>
 
@@ -15,6 +16,26 @@
     <br>
     <button type="submit" class="btn btn-primary" onclick="addTask()">Submit</button>
   </form>  -->
+=======
+
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist App</title>
+</head>
+<body>
+  <h1>Checklist App</h1>
+  <form>
+    <label for="item">How can we help you?</label>
+    <br>
+    <input type="text" id="item" placeholder="Type in your complaint">
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="addItem()">Add Item</button>
+  </form>
+
+</body>
+
+>>>>>>> da23a104da45a81f76d9099700a2efb048c2736b
 <br>
 
 OR
@@ -75,7 +96,7 @@ OR
 
 <body>
     <h3>Chat History</h3>
-    <ul id="taskList" href="google.com" onclick="openNewWindow"></ul>
+    <ul id="checklist"></ul>
   </body>
 
   <script>
@@ -105,40 +126,10 @@ function addTask(event) {
     </script>
 </div>
 
-<body>
-	<h2>Checklist</h2>
-	<ul>
-		<li><a href="#" onclick="openNewWindow()">List Item 1</a></li>
-		<li><a href="#" onclick="openNewWindow()">List Item 2</a></li>
-		<li><a href="#" onclick="openNewWindow()">List Item 3</a></li>
-		<li><a href="#" onclick="openNewWindow()">List Item 4</a></li>
-	</ul>
-</body>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Checklist App</title>
-</head>
-<body>
-  <h1>Checklist App</h1>
-  <form>
-    <label for="item">Item:</label>
-    <input type="text" id="item">
-    <button type="button" onclick="addItem()">Add Item</button>
-  </form>
-  <ul id="checklist">
-  </ul>
-
-  <script src="app.js"></script>
-</body>
 
 
 
 <script src="/static/app.js"></script>
-
-
-</html>
-
 
 
 {% endblock content %}
