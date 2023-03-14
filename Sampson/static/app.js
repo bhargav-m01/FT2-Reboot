@@ -35,6 +35,6 @@ function renderItems() {
 
 function openWindow(text) {
   const newWindow = window.open('', 'Checklist Item', 'height=200,width=400');
-  newWindow.document.write(`<h1>${text}</h1>`);
+  newWindow.document.write(`<h1>Complaint: ${text}</h1><br> <p>Response: We will get back to you with resolution</p>`);
   newWindow.document.close();
 }
